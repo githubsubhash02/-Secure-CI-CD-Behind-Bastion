@@ -1,0 +1,9 @@
+---
+- name: Behind-Bastion
+  hosts: Production
+  become: yes
+  tasks:   #you can you tasks below
+    - name: Print uptime
+      command: uptime
+
+~

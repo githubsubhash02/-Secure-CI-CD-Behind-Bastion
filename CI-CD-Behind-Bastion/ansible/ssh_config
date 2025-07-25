@@ -1,0 +1,25 @@
+Host bastion
+
+  Hostname 65.10.160.105
+
+  User ec2-user
+
+  IdentityFile /ansible/keys/Bastion-server-key.pem
+
+  IdentitiesOnly yes
+
+
+Host target
+
+  Hostname 172.0.3.101
+
+  User ec2-user
+
+  IdentityFile /ansible/keys/Patch-key.pem
+
+  ProxyJump bastion
+
+  IdentitiesOnly yes
+
+
+

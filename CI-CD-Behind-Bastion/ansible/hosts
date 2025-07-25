@@ -1,0 +1,7 @@
+[Production]
+app_target ansible_host=172.0.3.101 ansible_user=ec2-user
+
+[Production:vars]
+ansible_ssh_private_key_file=/ansible/keys/target-key.pem
+ansible_ssh_common_args='-o ProxyCommand="ssh -i /ansible/keys/bastion-key.pem -W %h:%p ec2-user@65.10.160.105" -o IdentitiesOnly=yes'
+
